@@ -1,2 +1,3 @@
 puts 'hello!'
-puts ENV.inspect
+st = File.read(ENV['GITHUB_EVENT_PATH'])
+puts st
