@@ -35,6 +35,8 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6
+      run: |
+        gem install git_diff_parser 
     - name: Build and test
       run: |
         ruby hello.rb
