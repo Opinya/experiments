@@ -1,4 +1,5 @@
 require 'json'
+require 'git_diff_parser'
 
 puts 'hello!'
 # puts ENV.inspect
