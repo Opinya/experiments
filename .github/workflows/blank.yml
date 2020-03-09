@@ -40,7 +40,5 @@ jobs:
         ruby-version: 2.6
     - name: Build and test
       run: |
-        git remote set-branches
-        git fetch
         gem install git_diff_parser 
         ruby hello.rb
