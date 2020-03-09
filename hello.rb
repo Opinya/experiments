@@ -5,10 +5,7 @@ path = ENV['GITHUB_EVENT_PATH']
 data = JSON.parse(File.read(path))
 diff = `git diff --unified=0 --no-color #{data['pull_request']['base']['sha']}`
 patches = GitDiffParser.parse(diff)
-
-relevant_patches = patches #.select { |patch| File.extname(patch.file) == 'rb' }
-
-p patches
+relevant_patches = patches.select { |patch| File.extname(patch.file) == 'rb' }
 
 regexes = [
   /\bwhere\s*\{/
@@ -22,7 +19,6 @@ summaries_by_regexes = regexes.map do |regex|
   [regex, summary]
 end.to_h
 
-p summaries_by_regexes
 added_regexes = summaries_by_regexes.select { |regex, summary| summary[:added] > summary[:removed] }
 unless added_regexes.empty?
   puts 'Squeel is deprecated. New code should not use it.'
