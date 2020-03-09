@@ -1,3 +1,5 @@
+require 'json'
+
 puts 'hello!'
 # puts ENV.inspect
 puts ENV['GITHUB_EVENT_PATH']
