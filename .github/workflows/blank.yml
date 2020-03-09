@@ -37,6 +37,4 @@ jobs:
     - name: Build and test
       run: |
         gem install git_diff_parser 
-        pwd
-        ls -la
         ruby hello.rb
