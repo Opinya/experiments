@@ -31,7 +31,7 @@ jobs:
         echo test, and deploy your project.
     - uses: actions/checkout@v2
       with:
-        ref: ${{ github.event.pull_request.head.ref }}
+        ref: ${{ github.event.pull_request.base.ref }}
         path: base_version
     - uses: actions/checkout@v2
       with:
