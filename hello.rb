@@ -6,7 +6,6 @@ puts 'hello!'
 path = ENV['GITHUB_EVENT_PATH']
 data = JSON.parse(File.read(path))
 diff = `git diff --unified=0 --no-color #{data['pull_request']['base']['sha']}`
-p diff
-#patches = GitDiffParser.parse(diff)
-#p patches
+patches = GitDiffParser.parse(diff)
+p patches
 #p `git branch --all`
