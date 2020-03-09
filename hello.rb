@@ -11,8 +11,7 @@ relevant_patches = patches #.select { |patch| File.extname(patch.file) == 'rb' }
 p patches
 
 regexes = [
-  /\bwhere\s*\{/,
-  /a/
+  /\bwhere\s*\{/
 ]
 
 summaries_by_regexes = regexes.map do |regex|
